@@ -1,0 +1,48 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "node-typescript-express-starter",
+    "description": "",
+    "contact": {
+      "name": "GitHub",
+      "url": "https://github.com/MrTimeey/node-typescript-express-starter"
+    },
+    "license": {
+      "name": "Licensed Under MIT",
+      "url": "https://github.com/MrTimeey/node-typescript-express-starter/blob/main/LICENSE"
+    },
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:8080/"
+    }
+  ],
+  "paths": {
+    "/api/hello": {
+      "get": {
+        "summary": "Returns greeting message",
+        "description": "Simple hello message",
+        "responses": {
+          "200": {
+            "description": "A simple message",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "msg": {
+                      "type": "string",
+                      "description": "Simple message",
+                      "example": "Hello World"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

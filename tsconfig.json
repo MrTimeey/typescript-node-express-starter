@@ -8,6 +8,7 @@
     "module": "NodeNext",
     "moduleResolution": "Node",
     "esModuleInterop": true,
+    "resolveJsonModule": true,
     "target": "ES2020",
     "sourceMap": true,
     "outDir": "./dist",
