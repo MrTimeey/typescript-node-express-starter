@@ -18,9 +18,35 @@
       "url": "http://localhost:8080/"
     }
   ],
+  "tags": [
+    {
+      "name": "API"
+    },
+    {
+      "name": "Docs"
+    }
+  ],
   "paths": {
+    "/": {
+      "get": {
+        "tags": [
+          "Docs"
+        ],
+        "summary": "Returns the Swagger UI",
+        "description": "Serves static Swagger UI",
+        "responses": {
+          "200": {
+            "description": "The Swagger UI",
+            "content": {
+              "text/html": {}
+            }
+          }
+        }
+      }
+    },
     "/api/hello": {
       "get": {
+        "tags": ["API"],
         "summary": "Returns greeting message",
         "description": "Simple hello message",
         "responses": {
@@ -39,6 +65,53 @@
                   }
                 }
               }
+            }
+          }
+        }
+      }
+    },
+    "/api/doc": {
+      "get": {
+        "tags": [
+          "Docs"
+        ],
+        "summary": "Returns the list of all provided api-doc resources",
+        "responses": {
+          "200": {
+            "description": "A list of all provided api-doc resources",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "providedFiles": {
+                      "type": "array",
+                      "items": {
+                        "type": "string",
+                        "example": "/openapi.json"
+                      }
+                    }
+                  }
+                }
+
+              }
+            }
+          }
+        }
+
+      }
+    },
+    "/api/doc/openapi.json": {
+      "get": {
+        "tags": [
+          "Docs"
+        ],
+        "summary": "Returns the openapi.json",
+        "responses": {
+          "200": {
+            "description": "The openapi.json which is the base for this document",
+            "content": {
+              "application/json": {}
             }
           }
         }

@@ -13,10 +13,10 @@ app.use(express.json());
 
 const apiRouter: express.Router = express.Router();
 apiRouter.use('/hello', helloWorld);
+apiRouter.use('/doc', apiDoc);
 
 app.use('/api', apiRouter);
 app.use('/', swaggerUi.serve, swaggerUi.setup(swaggerDocument, { explorer: false }));
-app.use('/doc', apiDoc);
 
 app.listen(config.port, () => {
     console.log(`it's alive on http://localhost:${config.port}`);
