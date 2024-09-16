@@ -15,7 +15,7 @@
   },
   "servers": [
     {
-      "url": "http://localhost:8080/"
+      "url": "http://localhost:3000/"
     }
   ],
   "tags": [
@@ -68,6 +68,32 @@
         }
       }
     },
+    "/api/ping": {
+      "get": {
+        "tags": ["API"],
+        "summary": "Returns simple pong message",
+        "description": "Simple pong message",
+        "responses": {
+          "200": {
+            "description": "A simple pong message",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "pong": {
+                      "type": "string",
+                      "description": "Timestamp",
+                      "example": "16.09.2024 - 09:25"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/doc": {
       "get": {
         "tags": ["Docs"],
@@ -84,7 +110,7 @@
                       "type": "array",
                       "items": {
                         "type": "string",
-                        "example": "/openapi.json"
+                        "example": "http://localhost:3000/api/doc/openapi.json"
                       }
                     }
                   }
