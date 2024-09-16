@@ -16,6 +16,7 @@ apiRouter.use('/doc', routes.apiDoc);
 
 server.use('/api', apiRouter);
 server.use('/actuator', routes.actuator);
-server.use('/', swaggerUi.serve, swaggerUi.setup(swaggerDocument, { explorer: false }));
+server.use('/swagger', swaggerUi.serve, swaggerUi.setup(swaggerDocument, { explorer: false }));
+server.use(routes.notFound)
 
 export default server;

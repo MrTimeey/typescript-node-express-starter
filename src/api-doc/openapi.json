@@ -27,7 +27,7 @@
     }
   ],
   "paths": {
-    "/": {
+    "/swagger": {
       "get": {
         "tags": ["Docs"],
         "summary": "Returns the Swagger UI",
