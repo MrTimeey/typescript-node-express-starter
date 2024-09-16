@@ -1,14 +1,11 @@
 import * as dotenv from 'dotenv';
 import { ApplicationConfig } from '../types';
 
-const config = dotenv.config();
+// Ignore missing .env file as long as all values have defaults
+dotenv.config();
 
-if (config.error) {
-    throw config.error;
-}
+export const getPort = () => parseInt(process.env.PORT as string) || 3000;
 
-const appConfig: ApplicationConfig = {
-    port: parseInt(process.env.PORT as string) || 3000,
+export const appConfig: ApplicationConfig = {
+  port: getPort()
 };
-
-export default appConfig;

@@ -1,3 +1,3 @@
-export type ApplicationConfig = {
-    port: number;
-};
+export interface ApplicationConfig {
+  port: number;
+}

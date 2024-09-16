@@ -29,9 +29,7 @@
   "paths": {
     "/": {
       "get": {
-        "tags": [
-          "Docs"
-        ],
+        "tags": ["Docs"],
         "summary": "Returns the Swagger UI",
         "description": "Serves static Swagger UI",
         "responses": {
@@ -72,9 +70,7 @@
     },
     "/api/doc": {
       "get": {
-        "tags": [
-          "Docs"
-        ],
+        "tags": ["Docs"],
         "summary": "Returns the list of all provided api-doc resources",
         "responses": {
           "200": {
@@ -93,19 +89,15 @@
                     }
                   }
                 }
-
               }
             }
           }
         }
-
       }
     },
     "/api/doc/openapi.json": {
       "get": {
-        "tags": [
-          "Docs"
-        ],
+        "tags": ["Docs"],
         "summary": "Returns the openapi.json",
         "responses": {
           "200": {
